@@ -1,6 +1,6 @@
 import Clock from './Clock';
 import ClockModel from './ClockModel';
-import {getByRole, render, RenderResult} from '@testing-library/react';
+import {getByTestId, render, RenderResult} from '@testing-library/react';
 import Controller from './Controller';
 import {mock, MockProxy} from 'jest-mock-extended';
 
@@ -35,9 +35,9 @@ describe(Clock, function () {
     const result: RenderResult = createUi();
     clock.model = model;
 
-    expect(getByRole(result.container, 'second')).toContainHTML('rotate(90deg)');
-    expect(getByRole(result.container, 'minute')).toContainHTML('rotate(180deg)');
-    expect(getByRole(result.container, 'hour')).toContainHTML('rotate(270deg)');
+    expect(getByTestId(result.container, 'second')).toContainHTML('rotate(90deg)');
+    expect(getByTestId(result.container, 'minute')).toContainHTML('rotate(180deg)');
+    expect(getByTestId(result.container, 'hour')).toContainHTML('rotate(270deg)');
   });
 
 });

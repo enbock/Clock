@@ -58,4 +58,28 @@ background img {
     left: calc(50vw - 10rem / 2);
 }
 
+#image-second-hand, #image-hour-hand, #image-minute-hand {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    top: calc(50vh - 10rem);
+    left: calc(50vw - 10rem);
+}
+
+#image-second-hand {
+    z-index: 5;
+}
+
+#image-hour-hand {
+    z-index: 3;
+}
+
+#image-minute-hand {
+    z-index: 4;
+}
+
+
+shadow {
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
+}
 

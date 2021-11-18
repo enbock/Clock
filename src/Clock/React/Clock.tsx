@@ -26,9 +26,9 @@ export default class Clock extends Component<Properties, State> {
       <img id="image-9o-clock" src={Image9oClock} alt="9 Uhr"/>
       <img id="image-12o-clock" src={Image12oClock} alt="12 Uhr"/>
       <shadow is="div">
-        <img id="image-second-hand" src={ImageSecondHand} alt="Sekundenzeiger" style={secondHandRotation}/>
-        <img id="image-hour-hand" src={ImageHourHand} alt="Stundenzeiger" style={hourHandRotation}/>
         <img id="image-minute-hand" src={ImageMinuteHand} alt="Minutenzeiger" style={minuteHandRotation}/>
+        <img id="image-hour-hand" src={ImageHourHand} alt="Stundenzeiger" style={hourHandRotation}/>
+        <img id="image-second-hand" src={ImageSecondHand} alt="Sekundenzeiger" style={secondHandRotation}/>
       </shadow>
     </>;
   }

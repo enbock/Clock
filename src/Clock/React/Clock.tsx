@@ -7,18 +7,34 @@ import Image12oClock from './Artifact/12oClock.svg';
 import ImageSecondHand from './Artifact/SecondHand.svg';
 import ImageHourHand from './Artifact/HourHand.svg';
 import ImageMinuteHand from './Artifact/MinuteHand.svg';
+import ClockModel from './ClockModel';
+import Controller from './Controller';
 
 interface Properties {
 }
 
 interface State {
+  model: ClockModel;
 }
 
 export default class Clock extends Component<Properties, State> {
+  constructor(props: Properties) {
+    super(props);
+    this.state = {model: new ClockModel()};
+    Controller.instance.attach(this);
+  }
+
+  public set model(model: ClockModel) {
+    this.setState({model: model});
+  }
+
   public render(): JSX.Element {
-    const secondHandRotation: object = {transform: 'rotate(45deg)'};
-    const hourHandRotation: object = {transform: 'rotate(0deg)'};
-    const minuteHandRotation: object = {transform: 'rotate(90deg)'};
+    const hourAngle: number = 360 / 1200 * this.state.model.microHour;
+    const minuteAngle: number = 360 / 6000 * this.state.model.microMinute;
+    const secondAngle: number = 360 / 6000 * this.state.model.microSeconds;
+    const secondHandRotation: object = {transform: 'rotate(' + secondAngle + 'deg)'};
+    const hourHandRotation: object = {transform: 'rotate(' + hourAngle + 'deg)'};
+    const minuteHandRotation: object = {transform: 'rotate(' + minuteAngle + 'deg)'};
     return <>
       <Background/>
       <img id="image-3o-clock" src={Image3oClock} alt="3 Uhr"/>
@@ -26,9 +42,15 @@ export default class Clock extends Component<Properties, State> {
       <img id="image-9o-clock" src={Image9oClock} alt="9 Uhr"/>
       <img id="image-12o-clock" src={Image12oClock} alt="12 Uhr"/>
       <shadow is="div">
-        <img id="image-minute-hand" src={ImageMinuteHand} alt="Minutenzeiger" style={minuteHandRotation}/>
-        <img id="image-hour-hand" src={ImageHourHand} alt="Stundenzeiger" style={hourHandRotation}/>
-        <img id="image-second-hand" src={ImageSecondHand} alt="Sekundenzeiger" style={secondHandRotation}/>
+        <img id="image-minute-hand" role="minute" src={ImageMinuteHand} alt="Minutenzeiger" style={minuteHandRotation}/>
+        <img id="image-hour-hand" role="hour" src={ImageHourHand} alt="Stundenzeiger" style={hourHandRotation}/>
+        <img
+          id="image-second-hand"
+          role="second"
+          src={ImageSecondHand}
+          alt="Sekundenzeiger"
+          style={secondHandRotation}
+        />
       </shadow>
     </>;
   }

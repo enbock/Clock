@@ -43,6 +43,8 @@
   "jest": {
     "collectCoverageFrom": [
       "!src/index.ts",
+      "!src/service-worker.ts",
+      "!src/serviceWorkerRegistration.ts",
       "!src/*.js",
       "!src/**/*.json",
       "!src/**/*.svg"

@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #E0E0E0;
+    font-family: sans-serif;
+    font-weight: bolder;
+}
+
+background {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+background img {
+    width: 100vw;
+    height: 100vh;
+    fill: none;
+    stroke: #A0A0A0;
+}
+
+#image-3o-clock {
+    position: absolute;
+    z-index: 2;
+    width: 10rem;
+    height: 10rem;
+    top: calc(50vh - 10rem / 2);
+    right: 0;
+}
+
+#image-6o-clock {
+    position: absolute;
+    z-index: 2;
+    width: 10rem;
+    height: 10rem;
+    left: calc(50vw - 10rem / 2);
+    bottom: 2rem;
+}
+
+#image-9o-clock {
+    position: absolute;
+    z-index: 2;
+    width: 10rem;
+    height: 10rem;
+    top: calc(50vh - 10rem / 2);
+    left: 0;
+}
+
+#image-12o-clock {
+    position: absolute;
+    z-index: 2;
+    width: 10rem;
+    height: 10rem;
+    top: 2rem;
+    left: calc(50vw - 10rem / 2);
+}
+
+

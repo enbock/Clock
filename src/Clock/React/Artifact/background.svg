@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+        width="2048"
+        height="2048"
+        viewBox="0 0 540 540"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+>
+    <g
+            style="fill:none;stroke:#A0A0A0;stroke-width:0.25;"
+    >
+        <path
+                d="M 75,157 0,112 v 0 z"
+                id="10oClock"
+        />
+        <path
+                d="M 157,75 112,0 Z"
+                id="11oClock"
+        />
+        <path
+                d="M 380,75 424,0 v 0 z"
+                id="1oClock"
+        />
+        <path
+                d="m 465,157 78,-45 z"
+                id="2oClock"
+        />
+        <path
+                d="m 464,382 78,43 z"
+                id="4oClock"
+        />
+        <path
+                d="m 380,464 46,78 z"
+                id="5oClock"
+        />
+        <path
+                d="m 157,464 -45,78 z"
+                id="7oClock"
+        />
+        <path
+                d="M 75,381 0,423 Z"
+                id="8oClock"
+        />
+    </g>
+</svg>
